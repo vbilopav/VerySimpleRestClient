@@ -54,21 +54,6 @@ namespace VerySimpleRestClient
             }
         }
 
-        internal static string BuildUrl(string url, object query)
-        {
-            if (query == null)
-            {
-                return url;
-            }
-            var values = query
-                .GetType()
-                .GetProperties()
-                .ToDictionary(
-                    key => key.Name, 
-                    value => Convert.ToString(value.GetValue(query, null))
-                    );
-
-            return QueryHelpers.AddQueryString(url, values);
-        }
+        internal static string BuildUrl(string url, Query query) => query == null ? url : QueryHelpers.AddQueryString(url, query.Content);
     }
 }

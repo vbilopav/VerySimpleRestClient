@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Text;
 using Newtonsoft.Json;
@@ -7,6 +8,27 @@ using Newtonsoft.Json;
 
 namespace VerySimpleRestClient
 {
+    public class Query
+    {
+        public IDictionary<string, string> Content { get; private set; }
+        public Query(object query)
+        {
+            Content = query
+                .GetType()
+                .GetProperties()
+                .ToDictionary(
+                    key => key.Name,
+                    value => Convert.ToString(value.GetValue(query, null))
+                );
+        }
+
+        public Query(IDictionary<string, string> query)
+        {
+            Content = query;
+        }
+    }
+
+
     public abstract class Body
     {
         public abstract HttpContent GetContent();
