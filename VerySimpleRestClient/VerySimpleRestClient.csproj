@@ -2,12 +2,30 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Vedran Bilopavlović</Authors>
+    <Company>VB Consulting</Company>
+    <Description>Very simple REST client and HttpClient abstraction. You don't want to jugle multiple disposable HttpClient interfaces and serializations / deserializations. You just want to send REST/HTTP requests with one line. Use this.</Description>
+    <PackageProjectUrl>https://github.com/vbilopav/VerySimpleRestClient</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/vbilopav/VerySimpleRestClient</RepositoryUrl>
+    <Copyright>Vedran Bilopavlović</Copyright>
+    <PackageTags>REST, HttpClient, Simple Request, Response</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageLicenseExpression></PackageLicenseExpression>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.WebUtilities" Version="2.2.0" />
     <PackageReference Include="Microsoft.CSharp" Version="4.5.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
