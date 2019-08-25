@@ -8,11 +8,12 @@
     <PackageProjectUrl>https://github.com/vbilopav/VerySimpleRestClient</PackageProjectUrl>
     <RepositoryUrl>https://github.com/vbilopav/VerySimpleRestClient</RepositoryUrl>
     <Copyright>Vedran Bilopavlović</Copyright>
-    <PackageTags>REST, HttpClient, Simple Request, Response</PackageTags>
+    <PackageTags>HTTP REST Client HttpClient Simple Request Response</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageLicenseExpression></PackageLicenseExpression>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageId>VBSoftware.VerySimpleRestClient</PackageId>
   </PropertyGroup>
 
   <ItemGroup>
