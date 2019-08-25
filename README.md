@@ -11,10 +11,10 @@ Library for sending REST requests for .NET Standard based on `HttpClient`
 Because almost all .NET projects I've seen have some kind of `HttpClient` abstraction. 
 
 Because you probably just want to to send some REST/HTTP requests and get the response - not juggle multiple 
-disposlable objects and multiple serializations and deserializatons - you just one want one line of code that 
+disposable objects and multiple serializations and deserializations - you just one want one line of code that 
 sends the request and read the response.
 
-`HttpClient` is pretty big and complex interface, there with many pitfalls and more often then not - mistakes and bugshappen.
+And since `HttpClient` is quite big and complex interface - more often than not, it contained bugs, most commonly forgot to dispose some objects. It's challenging to get it right from first try.
 
 So, this is mine solution that I'm using in various projects. I really don't wan't to write `HttpClient` helpers all over again, so hence this library. 
 
