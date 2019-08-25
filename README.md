@@ -111,7 +111,7 @@ There are none.
 However, this library is already used in multiple projects and in multiple unit tests already so it is very well tested 
 and covered with other projects unit tests. Such as this for example: https://github.com/vbilopav/postgrest.net/tree/master/UnitTests
 
-There might be transfer of unit tests from other projects if need to change this library riese, which I highly doubt it will.
+There might be transfer of those unit tests from other projects to this project, if need be - if need to change this library raises (which I highly doubt it will).
 
 ## Licence
 
