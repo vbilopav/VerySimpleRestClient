@@ -20,7 +20,7 @@ So, this is mine solution that I'm using in various projects. I really don't wan
 
 ## Quickstart
 
-... is the only start.
+... is only way to start.
 
 Just install `VBSoftware.VerySimpleRestClient` NuGet package and add using directive `using VerySimpleRestClient;` or reference static classes directly. There are only two of them:
 
