@@ -23,10 +23,6 @@ namespace VerySimpleRestClient
                     {
                         result = responseJson as TResult;
                     }
-                    else if (typeof(TResult) == typeof(object))
-                    {
-                        result = JsonConvert.DeserializeObject<dynamic>(responseJson);
-                    }
                     else
                     {
                         result = JsonConvert.DeserializeObject<TResult>(responseJson);
@@ -48,10 +44,23 @@ namespace VerySimpleRestClient
             {
                 return await ExecuteAction(client);
             }
-            using (var c = new HttpClient())
+
+            if (ClientBehaviour.DefaultClient != null)
             {
-                return await ExecuteAction(c);
+                return await ExecuteAction(ClientBehaviour.DefaultClient);
             }
+            if (ClientBehaviour.DefaultClientFunc != null)
+            {
+                return await ExecuteAction(ClientBehaviour.DefaultClientFunc());
+            }
+            if (ClientBehaviour.IsAutoDispose)
+            {
+                using (var c = new HttpClient())
+                {
+                    return await ExecuteAction(c);
+                }
+            }
+            return await ExecuteAction(new HttpClient());
         }
 
         internal static string BuildUrl(string url, Query query) => query == null ? url : QueryHelpers.AddQueryString(url, query.Content);
